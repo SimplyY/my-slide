@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+}
+li {
+    list-style-type: none;
+}
+
+.lu-slide {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    .slide-items-wrapper {
+        width: 100%;
+        height: 100%;
+
+        .slide-item {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            width: 100%;
+
+            opacity: 0;
+
+            a img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .slide-item.active {
+            animation-duration: 0.2s;
+            animation-name: active;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes active {
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+    }
+
+    .slide-button-wrapper {
+        .slide-left-button,.slide-right-button {
+            width: 30px;
+            height: 60px;
+
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+
+            background-size: contain;
+
+            z-index: 10;
+            opacity: 0.3;
+
+            &:hover {
+                opacity: 0.4;
+                cursor: pointer;
+            }
+        }
+
+        .slide-left-button {
+            left: 0px;
+
+            background-image: url(http://7xkpdt.com1.z0.glb.clouddn.com/fe81815a1489655dc2fea452ef425704.png)
+        }
+        .slide-right-button {
+            right: 0px;
+
+            background-image: url(http://7xkpdt.com1.z0.glb.clouddn.com/76c76cad02e65e6ebff83744df89604f.png)
+        }
+    }
+
+    .slide-dots-wrapper {
+        position: absolute;
+
+        bottom: 4px;
+
+        width: 100%;
+        height: 26px;
+
+        text-align: center;
+
+        .slide-dot {
+            display: inline-block;
+
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            font-size: 26px;
+            color: #8c8c8c;
+            background: 0 0;
+            border-radius: 0;
+            box-shadow: none;
+            text-indent: 0;
+
+            cursor: pointer;
+        }
+
+        .slide-dot.active {
+            color: #e6551d;
+        }
+    }
+}
